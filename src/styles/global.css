@@ -1,0 +1,462 @@
+/* =========================================================
+   FreshTrack – globale Styles
+   Mobile-first, einfache CSS-Variablen für Farben.
+   Kein UI-Framework, damit der Code für Einsteiger verständlich bleibt.
+   ========================================================= */
+
+:root {
+  --farbe-primaer: #0d6b5e;      /* Petrol/Grün: Hauptfarbe */
+  --farbe-primaer-dunkel: #094f46;
+  --farbe-frisch: #2e8b57;       /* Grün: Frisch */
+  --farbe-bald: #e0a300;         /* Gelb/Orange: Bald prüfen */
+  --farbe-zeitnah: #d64545;      /* Rot/Orange: Zeitnah verwenden */
+  --farbe-verbraucht: #8a8a8a;   /* Grau: Verbraucht */
+  --farbe-hintergrund: #f4f7f6;
+  --farbe-karte: #ffffff;
+  --farbe-text: #1f2d2b;
+  --farbe-text-hell: #5a6b68;
+  --farbe-rand: #dbe5e2;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--farbe-hintergrund);
+  color: var(--farbe-text);
+}
+
+h1, h2, h3 {
+  margin: 0 0 0.5rem 0;
+  line-height: 1.25;
+}
+
+p {
+  margin: 0 0 0.75rem 0;
+}
+
+/* ---------- App-Grundgerüst ---------- */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app__laedt {
+  padding: 2rem;
+  text-align: center;
+}
+
+.app__kopf {
+  background-color: var(--farbe-primaer);
+  color: white;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.app__logo {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.app__slogan {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.app__inhalt {
+  flex: 1;
+  padding: 1rem;
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.app__navigation {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--farbe-karte);
+  border-top: 1px solid var(--farbe-rand);
+  position: sticky;
+  bottom: 0;
+}
+
+.nav-btn {
+  flex: 1;
+  padding: 0.85rem 0.25rem;
+  border: none;
+  background: none;
+  font-size: 0.75rem;
+  color: var(--farbe-text-hell);
+  cursor: pointer;
+}
+
+.nav-btn--aktiv {
+  color: var(--farbe-primaer);
+  font-weight: bold;
+  border-top: 3px solid var(--farbe-primaer);
+}
+
+/* ---------- Seiten allgemein ---------- */
+
+.seite {
+  padding-bottom: 1rem;
+}
+
+/* ---------- Dashboard ---------- */
+
+.dashboard__stat {
+  background-color: var(--farbe-karte);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--farbe-rand);
+}
+
+.dashboard__stat-zahl {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--farbe-primaer);
+}
+
+.dashboard__stat-text {
+  color: var(--farbe-text-hell);
+}
+
+.dashboard__liste {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.dashboard__eintrag {
+  background-color: var(--farbe-karte);
+  border: 1px solid var(--farbe-rand);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dashboard__eintrag-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.dashboard__eintrag-datum {
+  font-size: 0.8rem;
+  color: var(--farbe-text-hell);
+}
+
+.dashboard__leer {
+  color: var(--farbe-text-hell);
+  font-style: italic;
+}
+
+.dashboard__cta {
+  width: 100%;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 44px;
+}
+
+.btn--primaer {
+  background-color: var(--farbe-primaer);
+  color: white;
+}
+
+.btn--primaer:hover {
+  background-color: var(--farbe-primaer-dunkel);
+}
+
+.btn--sekundaer {
+  background-color: var(--farbe-karte);
+  color: var(--farbe-text);
+  border: 1px solid var(--farbe-rand);
+}
+
+.btn--gefahr {
+  background-color: #fdecec;
+  color: var(--farbe-zeitnah);
+  border: 1px solid var(--farbe-zeitnah);
+}
+
+/* ---------- Status Badges ---------- */
+
+.status {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  white-space: nowrap;
+  color: white;
+}
+
+.status--frisch {
+  background-color: var(--farbe-frisch);
+}
+
+.status--bald {
+  background-color: var(--farbe-bald);
+  color: #3a2c00;
+}
+
+.status--zeitnah {
+  background-color: var(--farbe-zeitnah);
+}
+
+.status--verbraucht {
+  background-color: var(--farbe-verbraucht);
+}
+
+/* ---------- Hinweisbox ---------- */
+
+.hinweis-box {
+  background-color: #eef6f4;
+  border-left: 4px solid var(--farbe-primaer);
+  padding: 0.6rem 0.75rem;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  color: var(--farbe-text);
+}
+
+/* ---------- Karten ---------- */
+
+.karten-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.karte {
+  background-color: var(--farbe-karte);
+  border: 1px solid var(--farbe-rand);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.karte--archiv {
+  opacity: 0.85;
+}
+
+.karte__kopf {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.karte__titel {
+  font-size: 1.05rem;
+}
+
+.karte__details {
+  margin: 0 0 0.6rem 0;
+}
+
+.karte__zeile {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.15rem 0;
+  border-bottom: 1px dashed var(--farbe-rand);
+  font-size: 0.9rem;
+}
+
+.karte__zeile dt {
+  color: var(--farbe-text-hell);
+  font-weight: 600;
+}
+
+.karte__zeile dd {
+  margin: 0;
+  text-align: right;
+}
+
+.karte__tage {
+  color: var(--farbe-text-hell);
+  font-size: 0.8rem;
+}
+
+.karte__aktionen {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.karte__aktionen .btn {
+  flex: 1;
+  min-width: 90px;
+}
+
+/* ---------- Filterleiste (Übersicht) ---------- */
+
+.filterleiste {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filterleiste__suche,
+.filterleiste__auswahl {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--farbe-rand);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  background-color: var(--farbe-karte);
+}
+
+/* ---------- Formular ---------- */
+
+.formular {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  background-color: var(--farbe-karte);
+  border: 1px solid var(--farbe-rand);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+
+.formular__feld {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.formular__feld label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--farbe-text-hell);
+}
+
+.formular__feld input,
+.formular__feld select,
+.formular__feld textarea {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--farbe-rand);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.formular__feld textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.formular__reihe {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.formular__reihe .formular__feld {
+  flex: 1;
+}
+
+.formular__fehler {
+  color: var(--farbe-zeitnah);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.formular__aktionen {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.formular__aktionen .btn {
+  flex: 1;
+}
+
+/* ---------- Bestätigungs-Dialog ---------- */
+
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 100;
+}
+
+.dialog {
+  background-color: var(--farbe-karte);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  max-width: 380px;
+  width: 100%;
+}
+
+.dialog__aktionen {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.dialog__aktionen .btn {
+  flex: 1;
+}
+
+/* ---------- Größere Bildschirme ---------- */
+
+@media (min-width: 640px) {
+  .app__inhalt {
+    padding: 1.5rem;
+  }
+
+  .karten-liste {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .filterleiste {
+    flex-direction: row;
+  }
+
+  .filterleiste__suche {
+    flex: 2;
+  }
+
+  .filterleiste__auswahl {
+    flex: 1;
+  }
+}
+
+@media (min-width: 960px) {
+  .karten-liste {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
